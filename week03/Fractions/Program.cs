@@ -8,10 +8,15 @@ class Program
 
         Fraction fraction = new Fraction();
         Console.WriteLine(fraction.GetFractionString());
+        Console.WriteLine(fraction.GetDecimalValue());
+        
         fraction = new Fraction(7);
         Console.WriteLine(fraction.GetFractionString());
-        fraction = new Fraction(7, 11);
+        Console.WriteLine(fraction.GetDecimalValue());
+        
+        fraction = new Fraction(1, 4);
         Console.WriteLine(fraction.GetFractionString());
+        Console.WriteLine(fraction.GetDecimalValue());
 
     }
 }
