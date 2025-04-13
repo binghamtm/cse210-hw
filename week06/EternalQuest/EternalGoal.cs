@@ -4,16 +4,17 @@ public class EternalGoal : Goal
     {
 
     }
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-        
+        int intPoints = int.Parse(_points);
+        return intPoints;
     }
     public override bool IsComplete()
     {
-        return true;
+        return false;
     }
     public override string GetStringRepresentation()
     {
-        return "";
+        return $"EternalGoal~{_shortName}~{_description}~{_points}";
     }
 }
