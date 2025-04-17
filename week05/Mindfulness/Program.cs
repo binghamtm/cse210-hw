@@ -1,5 +1,6 @@
 using System;
 using System.Reflection.Metadata;
+using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
@@ -7,19 +8,36 @@ class Program
     {
         Console.WriteLine("Hello World! This is the Mindfulness Project.");
 
-        List<Shape> shapes = new List<Shape>();
-        Square square = new Square("blue", 7);
-        Rectangle rectangle = new Rectangle("Red", 8, 4);
-        Circle circle = new Circle("Yellow", 3);
-        
-        shapes.Add(square);
-        shapes.Add(rectangle);
-        shapes.Add(circle);
+        int userSelection = 0;
 
-        foreach (Shape shape in shapes)
+        while (userSelection != 4)
         {
-            Console.WriteLine(shape.GetColor());
-            Console.WriteLine(shape.GetArea());
+            Console.WriteLine("Menu Options: ");
+            Console.WriteLine("\t 1. Start breathing activity");
+            Console.WriteLine("\t 2. Start reflecting activity");
+            Console.WriteLine("\t 3. Start listing activity");
+            Console.WriteLine("\t 4. Quit");
+            Console.Write("Select a choice from the menu: ");
+            string userSelectionString = Console.ReadLine();
+            userSelection = int.Parse(userSelectionString);
+
+            if (userSelection == 1)
+            {
+                BreathingActivity breathingActivity = new BreathingActivity();
+                breathingActivity.Run();
+            }
+            else if (userSelection == 2)
+            {
+                ReflectingActivity reflectingActivity = new ReflectingActivity();
+                reflectingActivity.Run();
+            }
+            else if (userSelection == 3)
+            {
+                ListingActivity listeningActivity = new ListingActivity();
+                listeningActivity.Run();
+            }
         }
+
+        
     }
 }
